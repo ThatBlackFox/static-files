@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ForgeRePO Diagram Download</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background-color: #f4f4f9;
+        text-align: center;
+      }
+
+      .container {
+        padding: 20px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 450px;
+      }
+
+      h1 {
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      #markdown-content {
+        /* This is the paragraph that will hold the rendered markdown */
+        color: #555;
+        font-size: 1.1em;
+        margin-bottom: 20px;
+      }
+
+      .download-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1em;
+        color: #fff;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .download-button:hover {
+        background-color: #0056b3;
+      }
+
+      .footnote {
+        margin-top: 30px;
+        padding-top: 15px;
+        border-top: 1px solid #ddd;
+        font-size: 0.9em;
+        color: #777;
+        text-align: left;
+      }
+
+      .footnote strong {
+        color: #333;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Diagram Download</h1>
+
+      <p id="markdown-content"></p>
+
+      <a href="drawings.drawio" download class="download-button"> Download </a>
+
+      <div class="footnote">
+        <strong>How to open this file:</strong>
+        <ol>
+          <li>
+            Go to the official
+            <a href="https://app.diagrams.net/" target="_blank"
+              >draw.io (diagrams.net)</a
+            >
+            website.
+          </li>
+          <li>
+            In the draw.io application, go to **File** > **Open From** >
+            **Device**.
+          </li>
+          <li>
+            Select the downloaded `drawings.drawio` file from your computer.
+          </li>
+        </ol>
+        <p style="margin-top: 5px">
+          Alternatively, you can use the desktop application.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      // 1. Define the Markdown content (using backticks for multiline strings)
+      const markdownText =
+        "Click to download the **draw.io file of ForgeRePO**";
+
+      // 2. Convert the Markdown to HTML using the 'marked' function
+      const htmlContent = marked.parse(markdownText);
+
+      // 3. Insert the generated HTML into the target paragraph
+      document.getElementById("markdown-content").innerHTML = htmlContent;
+    </script>
+  </body>
+</html>
